@@ -4,10 +4,7 @@ from datetime import datetime
 def string_to_date(string, date_format="%B %d, %Y at %I:%M%p"):
     """Преобразовывает строку заданного формата в дату.
     Возвращает дату"""
-    try:
-        date = datetime.strptime(string, date_format)
-    except:
-        date = datetime.now()
+    date = datetime.strptime(string, date_format)
     return date
 
 

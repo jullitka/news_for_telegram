@@ -15,27 +15,29 @@ def create_db():
         );""")
 
 
-def add_news(date_time, heading, text, type, link):
-    """Добавляет последнюю строку google-таблицы в таблицу"""
+def add_news(date_time, heading, text, type_news, link, tag):
+    """Добавляет последнюю строку google-таблицы в таблицу бд"""
     conn = sqlite3.connect('from_google.db')
     cur = conn.cursor()
     cur.execute("""INSERT INTO from_google
-                (date_time, heading,
-                 text, type_news, link)
-                VALUES(?, ?, ?, ?, ?);""",
-                (date_time, heading, text, type, link))
+                (date_time, heading, text,
+                 type_news, link, tag)
+                VALUES(?, ?, ?, ?, ?, ?);""",
+                (date_time, heading, text, type_news, link, tag))
     conn.commit()
 
 
-def update_table(old_date_time, date_time, heading, text, type, link):
-    """Заменяет информацию о последней записи"""
+def update_table(old_date_time, date_time, heading,
+                 text, type_news, link, tag):
+    """Заменяет информацию в последней записи"""
     conn = sqlite3.connect('from_google.db')
     cur = conn.cursor()
     cur.execute("""UPDATE from_google SET
-                date_time = ?, heading = ?,
-                text = ?, type_news = ?, link = ?
+                date_time = ?, heading = ?, text = ?,
+                type_news = ?, link = ?, tag = ?
                 WHERE date_time = ?;""",
-                (date_time, heading, text, type, link, old_date_time))
+                (date_time, heading, text, type_news,
+                 link, tag, old_date_time))
     conn.commit()
 
 
