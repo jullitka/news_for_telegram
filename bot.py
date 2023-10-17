@@ -7,6 +7,7 @@ from db import get_last_news_from_db, update_table
 from settings import CHANNEL_ID, SECRET_TOKEN, RETRY_PERIOD, SPREADSHEET_ID
 from utils import string_to_date
 
+
 def get_new_news(last_news_from_db, values):
     """Находит новости, которые недавно добавили в google-таблицу.
     Возвращает из в виде списка"""
@@ -58,6 +59,7 @@ def main():
             time.sleep(RETRY_PERIOD)
         update_news_in_bd(last_news_from_db[0], last_news_list)
         time.sleep(RETRY_PERIOD)
+
 
 if __name__ == '__main__':
     main()
