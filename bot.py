@@ -36,7 +36,7 @@ def list_messages(last_news_list):
     и возвращает сообщения, которые должен отправть бот"""
     messages = []
     for news in last_news_list:
-        message = f'Новость: {news[1]}, {news[4]}'
+        message = f"{news[1]}\n {news[2]}\n {news[4]}"
         messages.append(message)
     return messages
 
