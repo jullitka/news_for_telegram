@@ -27,5 +27,5 @@ SPREADSHEET_ID = os.environ['SPREADSHEET_ID']
 SECRET_TOKEN = os.getenv('TOKEN')
 CHANNEL_ID = os.getenv('CHANNEL_ID')
 
-
+# период (в секундах) проверки новостей в google-таблице
 RETRY_PERIOD = 5
