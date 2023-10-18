@@ -6,7 +6,7 @@ def create_db():
     conn = sqlite3.connect('from_google.db')
     cur = conn.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS from_google(
-        date_time VARCHAR PRIMARY KEY UNIQUE NOT NULL,
+        date_time VARCHAR PRIMARY KEY NOT NULL,
         heading VARCHAR,
         text TEXT,
         type_news VARCHAR(100),
