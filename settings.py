@@ -18,7 +18,7 @@ INFO = {
     'auth_uri':  os.environ['AUTH_URI'],
     'token_uri':  os.environ['TOKEN_URI'],
     'auth_provider_x509_cert_url':  os.environ['AUTH_PROVIDER_X509_CERT_URL'],
-    'client_x509_cert_url':  os.environ['CLIENT_X509_CERT_URL']
+    'client_x509_cert_url':  os.environ['CLIENT_X509_CERT_URL'],
 }
 EMAIL_USER = os.environ['EMAIL']
 SPREADSHEET_ID = os.environ['SPREADSHEET_ID']
@@ -29,3 +29,4 @@ CHANNEL_ID = os.getenv('CHANNEL_ID')
 
 # период (в секундах) проверки новостей в google-таблице
 RETRY_PERIOD = 5
+

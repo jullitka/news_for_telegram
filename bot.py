@@ -73,6 +73,7 @@ def main():
         try:
             values = get_sheet_data(SPREADSHEET_ID)
             create_db()
+
             last_news_from_db = get_last_news_from_db()
             # если в базе не записана последняя новость, то записываем
             if not last_news_from_db:
@@ -80,6 +81,7 @@ def main():
                 last_news = values[-1]
                 add_news(last_news[0], last_news[1], last_news[2],
                          last_news[3], last_news[4], last_news[5])
+                logger.info('Последняя новость добавлена в базу')
             # если записана, то получаем список новых новостей
             else:
                 last_news_list = get_new_news(last_news_from_db, values)
